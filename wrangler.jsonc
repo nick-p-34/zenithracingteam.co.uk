@@ -1,5 +1,5 @@
 {
   "name": "zenithracingteam",
   "compatibility_date": "2026-02-21",
-  "main": "src/index.ts"
+  "main": ".open-next/worker.js"
 }

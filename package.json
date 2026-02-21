@@ -10,7 +10,10 @@
     "lint": "eslint --ext .ts,.tsx,.js,.jsx .",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:preview": "opennextjs-cloudflare build && wrangler dev",
+    "cf:deploy": "opennextjs-cloudflare build && wrangler deploy"
   },
   "dependencies": {
     "framer-motion": "^12.34.3",
@@ -20,6 +23,7 @@
     "swr": "^2.4.0"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.16.5",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
