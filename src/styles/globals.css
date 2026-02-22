@@ -153,6 +153,35 @@ body {
     background: linear-gradient(120deg, rgb(94 94 93 / 30%), rgb(191 0 255 / 22%));
 }
 
+.social-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 999px;
+    color: var(--shade-white-3);
+    background: rgb(255 255 255 / 5%);
+    border: 1px solid rgb(255 255 255 / 16%);
+    transition: color 220ms ease, transform 220ms ease, background-color 220ms ease, box-shadow 240ms ease;
+}
+
+.social-icon {
+    line-height: 1;
+}
+
+.social-icon-link:hover,
+.social-icon-link:focus-visible {
+    color: var(--zenith-pink);
+    background: rgb(191 0 255 / 14%);
+    transform: translateY(-2px) scale(1.07);
+    box-shadow: 0 0 12px rgb(191 0 255 / 35%);
+}
+
+.social-icon-link:active {
+    transform: translateY(0) scale(0.95);
+}
+
 .inner-card {
     border-radius: 14px;
     padding: 0.9rem;

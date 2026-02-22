@@ -25,6 +25,14 @@ const tickerItems = [
     'Stay Tuned',
 ];
 
+
+const socialLinks = [
+    {name: 'Instagram', href: 'https://instagram.com/zenith_racing.team?igsh=MXNbTFnenJ5M2o0', iconClass: 'fa-brands fa-instagram'},
+    {name: 'TikTok', href: 'https://tiktok.com/@zenith.racing.team', iconClass: 'fa-brands fa-tiktok'},
+    {name: 'Bluesky', href: 'https://bsky.app/profile/zenith-racing-team.bsky.social', iconClass: 'fa-brands fa-bluesky'},
+    {name: 'Facebook', href: 'https://www.facebook.com/share/14X8GoarjZg/', iconClass: 'fa-brands fa-facebook-f'},
+];
+
 export default function HomePage() {
     return (
         <main className="landing-bg relative min-h-screen overflow-hidden px-6 py-12 text-[#f1f1f1] md:px-10">
@@ -40,10 +48,29 @@ export default function HomePage() {
                 transition={{duration: 0.9, ease: 'easeOut'}}
                 className="relative mx-auto flex min-h-[85vh] w-full max-w-6xl flex-col justify-between gap-10"
             >
-                <header
-                    className="retro-panel interactive-panel w-fit px-5 py-2 text-sm font-semibold uppercase tracking-[0.28em] text-[#dfdfdf]">
-                    Zenith Racing Team
-                </header>
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                    <header
+                        className="retro-panel interactive-panel w-fit px-5 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-[#dfdfdf]">
+                        Zenith Racing Team
+                    </header>
+
+                    <nav
+                        aria-label="Zenith Racing social media"
+                        className="retro-panel interactive-panel flex items-center gap-2 rounded-full px-3 py-2"
+                    >
+                        {socialLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                aria-label={link.name}
+                                className="social-icon-link"
+                                target="_blank"
+                            >
+                                <i aria-hidden="true" className={`${link.iconClass} social-icon`} />
+                            </a>
+                        ))}
+                    </nav>
+                </div>
 
                 <div className="grid items-start gap-8 lg:grid-cols-[1.25fr_0.9fr]">
                     <div className="space-y-6">
