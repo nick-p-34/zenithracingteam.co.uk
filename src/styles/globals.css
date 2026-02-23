@@ -204,7 +204,6 @@ body {
 
 .social-icon-link:hover,
 .social-icon-link:focus-visible {
-    color: var(--zenith-pink);
     background: rgb(191 0 255 / 14%);
     transform: translateY(-2px) scale(1.07);
     box-shadow: 0 0 12px rgb(191 0 255 / 35%);

@@ -55,14 +55,14 @@ export default function HomePage() {
 
 					<nav
 						aria-label="Zenith Racing social media"
-						className="retro-panel interactive-panel flex items-center gap-2 rounded-full px-3 py-2"
+						className="retro-panel interactive-panel no-glint flex items-center gap-2 rounded-full px-3 py-2"
 					>
 						{socialLinks.map(link => (
 							<a
 								key={link.name}
 								href={link.href}
 								aria-label={link.name}
-								className="social-icon-link"
+								className="social-icon-link interactive-panel"
 								target="_blank"
 							>
 								<i aria-hidden="true" className={`${link.iconClass} social-icon`} />
