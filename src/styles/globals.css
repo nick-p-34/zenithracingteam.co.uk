@@ -119,12 +119,10 @@ body {
     z-index: 0;
 }
 
-.interactive-panel:not(.no-glint):hover::before,
-.interactive-panel:not(.no-glint):focus-visible::before,
-.interactive-chip:hover::before,
-.interactive-chip:focus-visible::before {
+.interactive-panel.is-glinting::before,
+.interactive-chip.is-glinting::before {
     opacity: 1;
-    animation: panelGlint 250ms ease-in-out forwards;
+    animation: panelGlint 250ms ease-out forwards;
 }
 
 .interactive-panel::after,

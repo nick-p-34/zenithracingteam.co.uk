@@ -1,40 +1,96 @@
-'use client';
+"use client";
 
-import {motion} from 'framer-motion';
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const teaserCards = [
-    {
-        title: 'Watch This Space',
-        text: 'Our story begins soon. Stay tuned for updates on our team, car, and the season ahead.'
-    },
-    {
-        title: 'Site Under Construction',
-        text: 'We\'re working hard to build a digital garage, where you can explore all things Zenith Racing.'
-    },
-    {
-        title: 'Finding The Car',
-        text: 'As we aim for the Fiesta Zetec class, we\'re on the hunt for the perfect car to kick off our racing journey.'
-    },
+	{
+		title: "Watch This Space",
+		text: "Our story begins soon. Stay tuned for updates on our team, car, and the season ahead.",
+	},
+	{
+		title: "Site Under Construction",
+		text: "We're working hard to build a digital garage, where you can explore all things Zenith Racing.",
+	},
+	{
+		title: "Finding The Car",
+		text: "As we aim for the Fiesta Zetec class, we're on the hunt for the perfect car to kick off our racing journey.",
+	},
 ];
 
 const tickerItems = [
-    'Zenith Racing Team',
-    'Website Coming Soon',
-    'Watch This Space',
-    'First Season Loading',
-    'Stay Tuned',
+	"Zenith Racing Team",
+	"Website Coming Soon",
+	"Watch This Space",
+	"First Season Loading",
+	"Stay Tuned",
 ];
 
-
 const socialLinks = [
-    {name: 'Instagram', href: 'https://instagram.com/zenith_racing.team?igsh=MXNbTFnenJ5M2o0', iconClass: 'fa-brands fa-instagram'},
-    {name: 'TikTok', href: 'https://tiktok.com/@zenith.racing.team', iconClass: 'fa-brands fa-tiktok'},
-    {name: 'Bluesky', href: 'https://bsky.app/profile/zenith-racing-team.bsky.social', iconClass: 'fa-brands fa-bluesky'},
-    {name: 'Facebook', href: 'https://www.facebook.com/share/14X8GoarjZg/', iconClass: 'fa-brands fa-facebook-f'},
+	{
+		name: "Instagram",
+		href: "https://instagram.com/zenith_racing.team?igsh=MXNbTFnenJ5M2o0",
+		iconClass: "fa-brands fa-instagram",
+	},
+	{
+		name: "TikTok",
+		href: "https://tiktok.com/@zenith.racing.team",
+		iconClass: "fa-brands fa-tiktok",
+	},
+	{
+		name: "Bluesky",
+		href: "https://bsky.app/profile/zenith-racing-team.bsky.social",
+		iconClass: "fa-brands fa-bluesky",
+	},
+	{
+		name: "Facebook",
+		href: "https://www.facebook.com/share/14X8GoarjZg/",
+		iconClass: "fa-brands fa-facebook-f",
+	},
 ];
 
 export default function HomePage() {
-    return (
+	useEffect(() => {
+		const glintTargets = Array.from(
+			document.querySelectorAll<HTMLElement>(
+				".interactive-panel:not(.no-glint), .interactive-chip"
+			)
+		);
+		const handlers = new WeakMap<HTMLElement, () => void>();
+
+		const triggerGlint = (element: HTMLElement) => {
+			element.classList.remove("is-glinting");
+			void element.offsetWidth;
+			element.classList.add("is-glinting");
+		};
+
+		const clearGlint = (event: Event) => {
+			(event.currentTarget as HTMLElement).classList.remove("is-glinting");
+		};
+
+		glintTargets.forEach(element => {
+			const onEnter = () => triggerGlint(element);
+			handlers.set(element, onEnter);
+
+			element.addEventListener("mouseenter", onEnter);
+			element.addEventListener("focusin", onEnter);
+			element.addEventListener("animationend", clearGlint);
+		});
+
+		return () => {
+			glintTargets.forEach(element => {
+				const onEnter = handlers.get(element);
+				if (onEnter) {
+					element.removeEventListener("mouseenter", onEnter);
+					element.removeEventListener("focusin", onEnter);
+				}
+				element.removeEventListener("animationend", clearGlint);
+				element.classList.remove("is-glinting");
+			});
+		};
+	}, []);
+
+	return (
 		<main className="landing-bg relative min-h-screen overflow-hidden px-6 py-12 text-[#f1f1f1] md:px-10">
 			<div className="pointer-events-none absolute inset-0">
 				<div className="purple-glow purple-glow-one" />
@@ -84,11 +140,12 @@ export default function HomePage() {
 						</motion.h1>
 
 						<p className="max-w-2xl text-lg leading-relaxed text-[#dfdfdf] md:text-xl">
-							We&#39;re thrilled to announce the launch of Zenith Racing, a new grassroots
-							racing team aiming for the ICCR. As we prepare for our inaugural season,
-							we invite you to join us on this exciting journey. Follow our progress
-							as we build our car, develop our team, and take on the competition. Stay
-							tuned for updates, and contact us if you want to show your support!
+							We&#39;re thrilled to announce the launch of Zenith Racing, a new
+							grassroots racing team aiming for the ICCR. As we prepare for our
+							inaugural season, we invite you to join us on this exciting journey.
+							Follow our progress as we build our car, develop our team, and take on
+							the competition. Stay tuned for updates, and contact us if you want to
+							show your support!
 						</p>
 					</div>
 
