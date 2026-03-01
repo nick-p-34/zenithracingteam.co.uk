@@ -10,6 +10,7 @@ export default function AboutUsPage() {
 			<section className="relative mx-auto flex min-h-[85vh] w-full max-w-6xl items-center">
 				<h1 className="headline text-5xl leading-[1.05] font-black uppercase sm:text-6xl md:text-7xl">
 					About Us.
+					<br />
 					<span className="mt-2 block text-[#bf00ff]">Coming Soon.</span>
 				</h1>
 			</section>

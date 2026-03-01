@@ -136,6 +136,7 @@ export default function HomePage() {
 							className="headline text-5xl leading-[1.05] font-black uppercase sm:text-6xl md:text-7xl"
 						>
 							New Season, New Team.
+							<br />
 							<span className="mt-2 block text-[#bf00ff]">Coming Soon.</span>
 						</motion.h1>
 

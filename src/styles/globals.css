@@ -1,3 +1,4 @@
+@import url("https://fonts.cdnfonts.com/css/brick");
 @import "tailwindcss";
 
 :root {
@@ -175,6 +176,19 @@ body {
             0 8px 22px rgb(0 0 0 / 42%);
 }
 
+.headline > span {
+    font-family: "Brick", "Impact", "Haettenschweiler", "Arial Black", sans-serif;
+    font-size: 1.75em;
+    font-weight: 700;
+    line-height: 0.92;
+    margin-top: -0.18em;
+    padding-left: 0.5rem;
+    transform: rotate(-5deg);
+    transform-origin: left center;
+    display: inline-block;
+    position: relative;
+}
+
 .chip-pill {
     border: 1px solid rgb(241 241 241 / 30%);
     color: var(--shade-white-3);
@@ -246,10 +260,26 @@ body {
 }
 
 .ticker-text::after {
-    content: "✦";
+    content: "X";
     position: absolute;
     right: -0.5rem;
-    color: rgb(191 0 255 / 80%);
+    top: 66%;
+    transform: translateY(-50%);
+    color: var(--zenith-pink);
+    font-family: "Brick", "Urban Decay", "Impact", "Haettenschweiler", "Arial Black", sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+@media (max-width: 640px) {
+    .headline {
+        text-align: center;
+    }
+
+    .headline > span {
+        padding-left: 0;
+        line-height: 0.55;
+    }
 }
 
 @keyframes tickerMove {
@@ -300,5 +330,33 @@ body {
 
     to {
         transform: translateX(300%);
+    }
+}
+
+@keyframes sprayUnderlineDraw {
+    0% {
+        transform: rotate(-4deg) scaleX(0);
+        opacity: 0.25;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(-4deg) scaleX(1);
+        opacity: 0.95;
+    }
+}
+
+@keyframes sprayUnderlineErase {
+    0% {
+        transform: rotate(-4deg) scaleX(1);
+        opacity: 0.95;
+    }
+
+    100% {
+        transform: rotate(-4deg) scaleX(0);
+        opacity: 0;
     }
 }
