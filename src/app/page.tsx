@@ -141,12 +141,9 @@ export default function HomePage() {
 						</motion.h1>
 
 						<p className="max-w-2xl text-lg leading-relaxed text-[#dfdfdf] md:text-xl">
-							We&#39;re thrilled to announce the launch of Zenith Racing, a new
-							grassroots racing team aiming for the ICCR. As we prepare for our
-							inaugural season, we invite you to join us on this exciting journey.
-							Follow our progress as we build our car, develop our team, and take on
-							the competition. Stay tuned for updates, and contact us if you want to
-							show your support!
+							Introducing Zenith Racing Team, a new grassroots racing team with big
+							ambitions. We&#39;re gearing up for our first season in the ICCR, and we
+							can&#39;t wait to get on track! Stay tuned for more!
 						</p>
 					</div>
 
