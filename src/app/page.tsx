@@ -104,14 +104,14 @@ export default function HomePage() {
 				transition={{ duration: 0.9, ease: "easeOut" }}
 				className="relative mx-auto flex min-h-[85vh] w-full max-w-6xl flex-col justify-between gap-10"
 			>
-				<div className="flex flex-wrap items-center justify-between gap-4">
-					<header className="retro-panel interactive-panel w-fit px-5 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-[#dfdfdf]">
+				<div className="flex flex-wrap items-center justify-between gap-4 max-sm:flex-col">
+					<header className="retro-panel interactive-panel w-fit px-5 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-[#dfdfdf] max-sm:hidden">
 						Zenith Racing Team
 					</header>
 
 					<nav
 						aria-label="Zenith Racing social media"
-						className="retro-panel interactive-panel no-glint flex items-center gap-2 rounded-full px-3 py-2"
+						className="retro-panel interactive-panel no-glint flex items-center gap-2 rounded-full px-3 py-2 max-sm:mx-auto"
 					>
 						{socialLinks.map(link => (
 							<a

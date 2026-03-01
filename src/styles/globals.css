@@ -35,18 +35,16 @@ body {
 }
 
 .landing-bg {
-    background:
-            radial-gradient(circle at 14% 22%, rgb(118 33 180 / 45%) 0%, transparent 38%),
-            radial-gradient(circle at 85% 25%, rgb(191 0 255 / 28%) 0%, transparent 34%),
-            linear-gradient(135deg, var(--shade-purple-dark) 0%, var(--zenith-purple) 48%, var(--shade-black-2) 100%);
+    background: radial-gradient(circle at 14% 22%, rgb(118 33 180 / 45%) 0%, transparent 38%),
+    radial-gradient(circle at 85% 25%, rgb(191 0 255 / 28%) 0%, transparent 34%),
+    linear-gradient(135deg, var(--shade-purple-dark) 0%, var(--zenith-purple) 48%, var(--shade-black-2) 100%);
 }
 
 .grid-overlay {
     position: absolute;
     inset: 0;
-    background-image:
-            linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
-            linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
+    background-image: linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
     background-size: 38px 38px;
     mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
 }
@@ -79,9 +77,8 @@ body {
 .retro-panel {
     border: 1px solid rgb(255 255 255 / 14%);
     background: linear-gradient(160deg, rgb(12 12 12 / 78%), rgb(34 9 64 / 56%));
-    box-shadow:
-            inset 0 1px 0 rgb(255 255 255 / 15%),
-            0 14px 34px rgb(0 0 0 / 36%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 15%),
+    0 14px 34px rgb(0 0 0 / 36%);
     backdrop-filter: blur(4px);
     border-radius: 18px;
 }
@@ -134,9 +131,8 @@ body {
     border-radius: inherit;
     border: 1px solid transparent;
     background: linear-gradient(125deg, rgb(191 0 255 / 70%), rgb(255 255 255 / 40%), rgb(46 13 84 / 70%)) border-box;
-    mask:
-            linear-gradient(#000 0 0) padding-box,
-            linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
     mask-composite: exclude;
     opacity: 0;
     transition: opacity 320ms ease;
@@ -155,10 +151,9 @@ body {
 .interactive-chip:hover,
 .interactive-chip:focus-visible {
     transform: translateY(-4px) scale(1.2);
-    box-shadow:
-            inset 0 1px 0 rgb(255 255 255 / 26%),
-            0 0 16px rgb(191 0 255 / 35%),
-            0 20px 34px rgb(0 0 0 / 42%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 26%),
+    0 0 16px rgb(191 0 255 / 35%),
+    0 20px 34px rgb(0 0 0 / 42%);
     border-color: rgb(191 0 255 / 42%);
     filter: saturate(1.12);
 }
@@ -171,9 +166,8 @@ body {
 }
 
 .headline {
-    text-shadow:
-            0 2px 0 var(--shade-purple-dark),
-            0 8px 22px rgb(0 0 0 / 42%);
+    text-shadow: 0 2px 0 var(--shade-purple-dark),
+    0 8px 22px rgb(0 0 0 / 42%);
 }
 
 .headline > span {
@@ -270,14 +264,45 @@ body {
     line-height: 1;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .headline {
         text-align: center;
+        margin-inline: auto;
     }
 
     .headline > span {
         padding-left: 0;
         line-height: 0.55;
+    }
+
+    .ticker-text {
+        letter-spacing: 0.18em;
+        padding: 0 1.1rem;
+    }
+
+    .interactive-panel,
+    .interactive-chip {
+        animation: none;
+    }
+
+    .interactive-panel:hover,
+    .interactive-panel:focus-visible,
+    .interactive-chip:hover,
+    .interactive-chip:focus-visible {
+        transform: translateY(-1px) scale(1.02);
+    }
+
+    .purple-glow-one {
+        width: 220px;
+        height: 220px;
+        top: 8%;
+    }
+
+    .purple-glow-two {
+        width: 240px;
+        height: 240px;
+        right: -16%;
+        bottom: 12%;
     }
 }
 
@@ -329,33 +354,5 @@ body {
 
     to {
         transform: translateX(300%);
-    }
-}
-
-@keyframes sprayUnderlineDraw {
-    0% {
-        transform: rotate(-4deg) scaleX(0);
-        opacity: 0.25;
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: rotate(-4deg) scaleX(1);
-        opacity: 0.95;
-    }
-}
-
-@keyframes sprayUnderlineErase {
-    0% {
-        transform: rotate(-4deg) scaleX(1);
-        opacity: 0.95;
-    }
-
-    100% {
-        transform: rotate(-4deg) scaleX(0);
-        opacity: 0;
     }
 }
