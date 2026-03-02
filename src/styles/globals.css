@@ -170,6 +170,23 @@ body {
     0 8px 22px rgb(0 0 0 / 42%);
 }
 
+.content-page .headline,
+.content-page p {
+    text-align: center;
+    margin-inline: auto;
+}
+
+.content-page .page-intro {
+    max-width: 40rem;
+    padding: 0.9rem 1.15rem;
+    border: 1px solid rgb(255 255 255 / 22%);
+    border-radius: 14px;
+    background: linear-gradient(150deg, rgb(12 12 12 / 72%), rgb(58 23 100 / 58%));
+    box-shadow: 0 10px 26px rgb(0 0 0 / 30%);
+    color: var(--shade-white-2);
+    line-height: 1.55;
+}
+
 .headline > span {
     font-family: "Brick", "Impact", "Haettenschweiler", "Arial Black", sans-serif;
     font-size: 1.75em;
