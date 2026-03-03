@@ -235,6 +235,39 @@ body {
     transform: translateY(0) scale(0.95);
 }
 
+.social-text-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 0.75rem;
+    color: var(--shade-white-3);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgb(255 255 255 / 5%);
+    border: 1px solid rgb(255 255 255 / 16%);
+    transition: color 220ms ease, transform 220ms ease, box-shadow 240ms ease;
+}
+
+.social-text-link:hover,
+.social-text-link:focus-visible {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 12px rgb(191 0 255 / 35%);
+}
+
+.social-text-link:hover::before,
+.social-text-link:focus-visible::before {
+    opacity: 1;
+    animation: panelGlint 250ms ease-out forwards;
+}
+
+.social-text-link:active {
+    transform: translateY(0) scale(0.97);
+}
+
 .inner-card {
     border-radius: 14px;
     padding: 0.9rem;
